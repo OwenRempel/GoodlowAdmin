@@ -9,6 +9,8 @@ function AddForm() {
   const nav = useNavigate()
 
   const [form, setform] = useState({});
+  const [disable, setDisable] = useState(false)
+
   let AllowedRoutes = [
     'aclass',
     'blogs',
@@ -37,13 +39,15 @@ function AddForm() {
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
+    setDisable(true)
     const result = await formHandle(form, e.target)
     
     if(result.success){
       NotificationManager.success(result.success);
-      nav('/')
+      //nav('/')
     }else{
       NotificationManager.error(result.error);
+      setDisable(false)
     }
   }
   
@@ -53,7 +57,7 @@ function AddForm() {
           <Back link='/'/>
         </div>
         
-        <Form form={form} onSubmit={handleSubmit}/>
+        <Form form={form} onSubmit={handleSubmit} disable={disable}/>
       </>
     
   ) 

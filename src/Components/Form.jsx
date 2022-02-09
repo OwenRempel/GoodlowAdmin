@@ -1,6 +1,8 @@
 import * as Fields from "./FormFields";
 import '../css/Form.css'
-export default function Form({ form, onSubmit,}) {
+
+export default function Form({ form, onSubmit, disable}) {
+    
     const { fields, formName, formTitle } = form;
     if (!fields) return null;
     return (
@@ -14,7 +16,7 @@ export default function Form({ form, onSubmit,}) {
             return <Field key={index} {...field} />;
         })}
 
-        <button className='btn' type="submit" name={formName}>Submit</button>
+        <button className='btn' type="submit" disabled={disable} name={formName}>{disable ? 'Uploading': 'Submit'}</button>
         </form>
   );
 }
