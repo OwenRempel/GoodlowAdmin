@@ -16,7 +16,7 @@ function Nav() {
   return(
     <div className='menu'>
         <div className="mobMenu" onClick={() => setMenu(!Menu)}>
-            <img src={!Menu ? `${process.env.REACT_APP_SUBFOLDER}/menuIcons/menu.svg` : `${process.env.REACT_APP_SUBFOLDER}/menuIcons/back.svg`} alt="menuicon"  />
+            <img src={!Menu ? `./menuIcons/menu.svg` : `./menuIcons/back.svg`} alt="menuicon"  />
         </div>
         <div className={`menuItems ${Menu ? 'menuBig' : ''}`}>
           <MenuItem onClick={closeMenu}  to='/'>Home</MenuItem>
