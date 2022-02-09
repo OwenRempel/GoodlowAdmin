@@ -44,7 +44,7 @@ function AddForm() {
     
     if(result.success){
       NotificationManager.success(result.success);
-      //nav('/')
+      nav('/')
     }else{
       NotificationManager.error(result.error);
       setDisable(false)
