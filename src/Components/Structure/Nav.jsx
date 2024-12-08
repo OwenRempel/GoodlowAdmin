@@ -20,12 +20,12 @@ function Nav() {
         </div>
         <div className={`menuItems ${Menu ? 'menuBig' : ''}`}>
           <MenuItem onClick={closeMenu}  to='/'>Home</MenuItem>
-          <MenuItem onClick={closeMenu} to='/sermons/add'>+ Sermon</MenuItem>
-          <MenuItem onClick={closeMenu} to='/events/add'>+ Event</MenuItem>
-          <MenuItem onClick={closeMenu} to='/bulletins/add'>+ Bulletin</MenuItem>
-          <MenuItem onClick={closeMenu} to='/blogs/add'>+ Blog</MenuItem>
-          <MenuItem onClick={closeMenu} to='/aclass/add'>+ Adult Class</MenuItem>
-          <MenuItem onClick={closeMenu} to='/resources/add'>+ Resources</MenuItem>
+          <MenuItem onClick={closeMenu} to='/sermons/add'>Add Sermon</MenuItem>
+          <MenuItem onClick={closeMenu} to='/events/add'>Add Event</MenuItem>
+          <MenuItem onClick={closeMenu} to='/bulletins/add'>Add Bulletin</MenuItem>
+          <MenuItem onClick={closeMenu} to='/blogs/add'>Add Blog</MenuItem>
+          <MenuItem onClick={closeMenu} to='/aclass/add'>Add Adult Class</MenuItem>
+          <MenuItem onClick={closeMenu} to='/resources/add'>Add Resources</MenuItem>
           <MenuItem onClick={closeMenu} to='/logout'>Logout</MenuItem>
         </div>
         <img src='./logo.png' alt='Logo' className='logo'/>

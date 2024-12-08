@@ -6,7 +6,7 @@ export default function Form({ form, onSubmit, disable}) {
     const { fields, formName, formTitle } = form;
     if (!fields) return null;
     return (
-        <form onSubmit={onSubmit} className='inputForm' method="POST">
+            <form onSubmit={onSubmit} className='inputForm' method="POST">
         {formTitle && <h1 className='inputTitle'>{formTitle}</h1>}
         {fields.map(({ typeName, ...field }, index) => {
             const Field = Fields[typeName];

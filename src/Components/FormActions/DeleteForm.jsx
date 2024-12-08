@@ -42,7 +42,7 @@ function DeleteForm() {
     if (!AllowedRoutes.includes(route)) return <h1>That is not a valid Route!!</h1>;
 
   return(
-    <>
+    <div className="content">
       <div className='backWrap'>
         <Back link='/'/>
       </div>
@@ -52,7 +52,7 @@ function DeleteForm() {
           <button className="btn yes-btn" onClick={del}>Yes</button>
           <button className="btn no-btn" onClick={no}>No</button>
       </div>
-    </>
+    </div>
   );
 }
 

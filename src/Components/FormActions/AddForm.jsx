@@ -52,13 +52,13 @@ function AddForm() {
   }
   
   return(
-      <>
+      <div className="content">
         <div className='backWrap'>
           <Back link='/'/>
         </div>
         
         <Form form={form} onSubmit={handleSubmit} disable={disable}/>
-      </>
+      </div>
     
   ) 
 }
