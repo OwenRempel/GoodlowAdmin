@@ -2,6 +2,11 @@ export async function formHandle(form, FormItem, methodType='POST', ID){
     const { callBack, formName } = form;
     let url;
     let options;
+    let WebUrl = ''
+    if(process.env.REACT_APP_CALLBACK_PREFIX){
+         WebUrl = process.env.REACT_APP_CALLBACK_PREFIX;
+    }
+    console.log(process.env)
     if(methodType === 'POST'){
         let forms = new FormData(FormItem);
         forms.append('Token', localStorage.getItem('Token'));
@@ -32,9 +37,9 @@ export async function formHandle(form, FormItem, methodType='POST', ID){
     }
     
     if(ID){
-         url = callBack+'/'+ID
+         url = WebUrl+callBack+'/'+ID
     }else{
-         url = callBack
+         url = WebUrl+callBack
     }
     const res = await fetch(url, options);
     

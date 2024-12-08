@@ -19,29 +19,12 @@ function HomeItem(props){
               setList(result)
           });
   }, [url, yesfile])
+  
   let Urlk;
   if(noedit){
-    Urlk = 
-        [
-            {
-                title:'Delete',
-                link:`/${url}/delete/`
-            }
-        ]
-      
+    Urlk = [{title:'Delete', link:`/${url}/delete/`}]  
   }else{
-    Urlk = 
-      [
-          {
-              title:'Edit',
-              link:`/${url}/update/`
-          },
-          {
-              title:'Delete',
-              link:`/${url}/delete/`
-          }
-      ]
-      
+    Urlk = [{title:'Edit', link:`/${url}/update/`}, {title:'Delete', link:`/${url}/delete/`}]
   }
 
   if (!url) return null;
@@ -95,7 +78,6 @@ function Home() {
   const [Tab, setTab] = useState(1);
 
   const toggleTab = (index) => {
-    console.log(index)
     setTab(index)
   }
  

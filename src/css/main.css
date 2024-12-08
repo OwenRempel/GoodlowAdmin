@@ -1,25 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-:root{
-  --background:#181f22;
-  --audio-background:#38454a;
-  --shadow:unset;
-  --text-color:white;
+:root {
+  --background: #212121;
+  --audio-background: #424242;
+  --shadow: unset;
+  --text-color: white;
   --no-button-color: #e63946;
   --yes-button-color: #388e3c;
-  --light-text-color:white;
+  --light-text-color: #212121;
+  --tabActive: rgb(28, 31, 31);
+  --btnBg: #424242;
+  --btnBgHov: #757575;
+  --btnText: var(--text-color);
+  --menuBg: #272727;
+  --btnHigh: white;
 }
 
 @media (prefers-color-scheme: light) {
-  :root{
-    --background:white;
-    --shadow:3px 3px 7px 0px #455a6494;
-    --text-color:black;
-    --light-text-color:white;
-    --audio-background:unset;
+  :root {
+    --background: white;
+    --shadow: 3px 3px 7px 0px #455a6494;
+    --text-color: black;
+    --light-text-color: white;
+    --audio-background: unset;
     --no-button-color: #e63946;
     --yes-button-color: #388e3c;
-  }
+    --tabActive: #9E9E9E;
+    --btnBg: #E0E0E0;
+    --btnBgHov: #BDBDBD;
+    --btnText: var(--text-color);
+    --menuBg: #E0E0E0;
+    --btnHigh: #757575;
+}
 }
 
 ::-webkit-scrollbar {
@@ -78,7 +90,7 @@ a,h1,h2,h3,h4,h5,h6{
 
 .btn {
     text-decoration: none;
-    color: #fff;
+    color:var(--btnText);
     background-color: #26a69a;
     text-align: center;
     letter-spacing: .5px;
@@ -95,8 +107,10 @@ a,h1,h2,h3,h4,h5,h6{
     text-transform: capitalize;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
-    background-color: #2196F3;
-    background-color: #394a52;
+    background-color: var(--btnBg);
+  }
+  .btn:hover{
+    background-color: var(--btnBgHov);
   }
 
   .no-btn{
@@ -112,17 +126,17 @@ a,h1,h2,h3,h4,h5,h6{
   }
 
   .content{
-    width:90vw;
+    width:calc(100vw - 200px);
     height: 100vh;
     overflow: auto;
   }
 
   .menu {
     height: 100vh;
-    width: 10vw;
+    width: 200px;
     margin: 0px;
     box-shadow:var(--shadow);
-    background-color: #272b2d;
+    background-color: var(--menuBg);
    display: grid;
    grid-template-rows: auto 1fr;
     
@@ -141,13 +155,13 @@ a,h1,h2,h3,h4,h5,h6{
     padding: 10px;
     margin: 9px 4px;
     font-size: 18px;
-    color: white;
+    color: var(--btnText);
     transition: all 300ms;
     width: max-content;
   }
   .menuItem:hover{
-    background-color:#d9e1e5;
-    color: black;
+    background-color:var(--btnHigh);
+    color: var(--light-text-color);
     border-radius: 4px;
   }
 
@@ -178,15 +192,27 @@ a,h1,h2,h3,h4,h5,h6{
 
 @media only screen and (max-width: 1000px) {
 
+  .Wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content{
+    width:100vw;
+    height: calc(100vh - 100px);
+    overflow: auto;
+  }
+
     .menu{
+        height: 100px;
+        width: 100vw;
         display: grid;
         grid-template-columns: 1fr 150px ;
-        
-
     }
     .logo{
         grid-column: 2;
         height: 100px;
+        width: unset;
         margin-right: 10px;
     }
     .mobMenu {
@@ -293,7 +319,7 @@ a,h1,h2,h3,h4,h5,h6{
     font-size: 18px;
   }
   .tab-active{
-    background-color: var(--shadow);
+    background-color: var(--tabActive);
     border-bottom: 1px solid var(--light-text-color);
   }
   .youtubeButtonWrap{
@@ -316,20 +342,31 @@ a,h1,h2,h3,h4,h5,h6{
 
 @media only screen and (max-width: 1000px) {
   .youtubeButtonWrap{
+    display: flex;
+    justify-content: center;
     width: 95vw;
     margin: 20px auto;
+  }
+  .Tabs{
+    display: flex;
+    width: 95vw;
+    margin: auto;
+    
+  }
+  .tab-button{
+    width: calc(95vw / 5);
+    margin: 1px;
+    font-size: 18px;
   }
   .homeItems{
     width: 95vw;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+   
   }
   .homeItem{
     display: none;
     width: 100%;
-    max-height: 500px;
+    max-height: calc(100vw - 100px);
     overflow: auto;
     padding: 20px;
   }
